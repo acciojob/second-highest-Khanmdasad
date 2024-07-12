@@ -6,10 +6,8 @@ function secondHighest(arr) {
 
     let first = -Infinity;
     let second = -Infinity;
-    let uniqueValues = new Set();
 
     for (let i = 0; i < arr.length; i++) {
-        uniqueValues.add(arr[i]);
         if (arr[i] > first) {
             second = first;
             first = arr[i];
@@ -18,8 +16,8 @@ function secondHighest(arr) {
         }
     }
 
-    // If there is only one unique value in the array, return -Infinity
-    if (uniqueValues.size < 2) {
+    // If second is still -Infinity, it means there was no valid second highest
+    if (second === -Infinity) {
         return -Infinity;
     }
 
